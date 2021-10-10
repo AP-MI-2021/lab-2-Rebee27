@@ -1,9 +1,9 @@
-"""
+'''
 1. Gaseste ultimul numar prim mai mic decat un numar dat.
 param n: numarul dat
 param is_prime: verifica daca un numar este  prim
 return : ultimul numar prim mai mic decat numarul dat
-"""
+'''
 
 
 def is_prime(n):
@@ -34,14 +34,13 @@ test_get_largest_prime_below()
 number = int(input("Dati un numar pentru a afla ultimul numar prim mai mic decat acesta = "))
 print("ultimul numar prim mai mic decat numarul dat este ", get_largest_prime_below(number))
 
-
-"""
+'''
 5. Determinati daca un numar este palindrom.
 param n: int, un numar introdus de utilizator.
 param copy: int, copia numarului introdus.
 param palindrom: int, o variabila in care se va stoca palindromul numarului introdus.
 return: palindromul unui numar.
-"""
+'''
 
 
 def is_palindrom(n):
@@ -71,7 +70,29 @@ if is_palindrom(number):
 else:
     print("False")
 
-
+'''
+12. Determină dacă un număr este superprim: dacă toate prefixele sale sunt prime. 
 '''
 
-'''
+
+def is_superprime(n: int) -> bool:
+    while n > 0:
+        if is_prime(n):
+            return False
+        n = n // 10
+    return True
+
+
+def test_is_superprime():
+    assert is_superprime(233) == True
+    assert is_superprime(237) == False
+    assert is_superprime(29) == True
+
+
+test_is_superprime()
+
+x = int(input("Dati un nr pentru a afla daca este superprim sau nu = "))
+if is_superprime(x):
+    print("Este superprim")
+else:
+    print("Nu este superprim")
