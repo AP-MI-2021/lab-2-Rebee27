@@ -111,6 +111,9 @@ test_is_superprime()
 
 
 def main():
+    test_is_superprime()
+    test_is_palindrom()
+    test_get_largest_prime_below()
     l = []
     while True:
         printMeniu()
