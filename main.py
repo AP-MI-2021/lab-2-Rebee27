@@ -79,9 +79,10 @@ def test_is_palindrom():
 
 def is_superprime(n: int) -> bool:
     while n > 0:
-        if is_prime(n):
+        if not is_prime(n):
             return False
         n = n // 10
+
     return True
 
 
