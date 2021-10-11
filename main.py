@@ -14,14 +14,9 @@ def printMeniu():
     print("x.Iesire")
 
 
-def citireLista():
-    l = []
-    givenString = input("Dati lista, cu elemente separate prin virgula")
-    numberAsString = givenString.split(",")
-    for x in numberAsString:
-        l.append(int(x))
-    return l
-
+def citireNumar():
+    n = int(input("Dati un numar"))
+    return n
 
 
 def is_prime(n):
@@ -47,10 +42,6 @@ def test_get_largest_prime_below():
     assert get_largest_prime_below(24) == 23
     assert get_largest_prime_below(2) is None
 
-
-test_get_largest_prime_below()
-number = int(input("Dati un numar pentru a afla ultimul numar prim mai mic decat acesta = "))
-print("ultimul numar prim mai mic decat numarul dat este ", get_largest_prime_below(number))
 
 '''
 5. Determinati daca un numar este palindrom.
@@ -81,13 +72,6 @@ def test_is_palindrom():
     assert is_palindrom(7) == True
 
 
-test_is_palindrom()
-number = int(input("Dați un număr pentru a afla daca este palindrom = "))
-if is_palindrom(number):
-    print("True")
-else:
-    print("False")
-
 '''
 12. Determină dacă un număr este superprim: dacă toate prefixele sale sunt prime. 
 '''
@@ -107,25 +91,24 @@ def test_is_superprime():
     assert is_superprime(29) == True
 
 
-test_is_superprime()
-
-
 def main():
     test_is_superprime()
     test_is_palindrom()
     test_get_largest_prime_below()
-    l = []
     while True:
         printMeniu()
         optiune = input("Dati optiunea: ")
         if optiune == "1":
-            l = citireLista()
+            n = citireNumar()
         elif optiune == "2":
-            print(get_largest_prime_below(l))
+            print(get_largest_prime_below(n))
         elif optiune == "3":
-            print(is_palindrom(l))
+            if(is_palindrom(n)):
+                print("True")
+            else:
+                print("False")
         elif optiune == "3":
-            print(is_superprime(l))
+            print(is_superprime(n))
         elif optiune == "x":
             break
         else:
