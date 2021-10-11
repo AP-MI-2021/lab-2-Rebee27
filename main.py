@@ -6,6 +6,24 @@ return : ultimul numar prim mai mic decat numarul dat
 '''
 
 
+def printMeniu():
+    print("1.Citire lista")
+    print("2.Determina ultimul numar prim mai mic decat  numarul dat")
+    print("3.Determinati daca un numar este palindrom")
+    print("4.Determină dacă un număr este superprim: dacă toate prefixele sale sunt prime.")
+    print("x.Iesire")
+
+
+def citireLista():
+    l = []
+    givenString = input("Dati lista, cu elemente separate prin virgula")
+    numberAsString = givenString.split(",")
+    for x in numberAsString:
+        l.append(int(x))
+    return l
+
+
+
 def is_prime(n):
     if n < 2:
         return False
@@ -91,8 +109,21 @@ def test_is_superprime():
 
 test_is_superprime()
 
-x = int(input("Dati un nr pentru a afla daca este superprim sau nu = "))
-if is_superprime(x):
-    print("Este superprim")
-else:
-    print("Nu este superprim")
+
+def main():
+    l = []
+    while True:
+        printMeniu()
+        optiune = input("Dati optiunea: ")
+        if optiune == "1":
+            l = citireLista()
+        elif optiune == "2":
+            print(get_largest_prime_below(l))
+        elif optiune == "3":
+            print(is_palindrom(l))
+        elif optiune == "3":
+            print(is_superprime(l))
+        elif optiune == "x":
+            break
+        else:
+            print("Optiune gresita! Reincercati!")
